@@ -1,0 +1,19 @@
+<div class="container">
+	<%= render 'books/list', book: @book %>
+	<div class="col-lg-9">
+		<h2>Book detail</h2>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td></td>
+					<td><%= @book_date.title %></td>
+					<td><%= @book_date.body %></td>
+					<td><%= link_to "edit", edit_book_path(@book_date) %></td>
+					<td><% if @book_date.user == current_user %>
+						<%= link_to "Destroy", book_path(@book_date), method: :delete %>
+						<% end %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
