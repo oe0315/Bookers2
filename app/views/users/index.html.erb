@@ -1,1 +1,26 @@
-<h1>User info</h1>
+<div class="container">
+	<%= render 'books/list', book: @book, user: current_user %>
+	<div class="col-lg-9">
+		<div class="col-lg-9">
+		<h2>Users</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>image</th>
+					<th>name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
+				<tr>
+					<td><%= attachment_image_tag user,:profile_image, :fill, 30, 30, class: "pull-left profile-thumb" %></td>
+					<td><%= user.name %></td>
+					<td></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+    </div>
+</div>
