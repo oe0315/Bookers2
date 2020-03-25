@@ -1,14 +1,14 @@
 <div class="container">
 	<% if @book.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger">
-    <ul>
-      <h3><%= @book.errors.count %><span>errors prohibited this book from being saved</span></h3>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+	<div id="error_explanation" class="alert alert-danger">
+		<ul>
+			<h3><%= @book.errors.count %><span>errors prohibited this book from being saved</span></h3>
+			<% @book.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
 	<%= render 'books/list', book: @book, user: current_user %>
 	<div class="col-lg-9">
 		<h2>Books</h2>

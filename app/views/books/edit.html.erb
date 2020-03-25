@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<h1 class="col-lg-9 col-lg-offset-3">Editing Book</h1>
+		<div class="row">
+			<%= form_for(@book) do |f| %>
+
+			<div class="col-lg-offset-3 col-lg-9">
+				<h4>Title</h4>
+			</div>
+			<div class="col-lg-offset-3 col-lg-9">
+				<%= f.text_field :title, size: 80 %>
+			</div>
+
+			<div class="col-lg-offset-3 col-lg-9">
+				<h4>opinion</h4>
+			</div>
+			<div class="col-lg-offset-3 col-lg-9">
+				<%= f.text_area :body, size: "79*10" %>
+			</div>
+			<div class="col-lg-offset-3 col-lg-9">
+				<input type="submit" name="commit" value="Update Book" class="btn btn-primary col-lg-8 ">
+			</div>
+			<% end %>
+			<div class="col-lg-offset-3 col-lg-9">
+				<%= link_to "show", book_path %><%= "|" %><%= link_to "back", books_path %>
+			</div>
+		</div>
+	</div>
+</div>

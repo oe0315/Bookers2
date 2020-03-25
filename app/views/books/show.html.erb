@@ -1,4 +1,5 @@
 <div class="container">
+	<%= flash[:notice] %>
 	<%= render 'books/list', book: @book, user: current_user%>
 	<div class="col-lg-9">
 		<h2>Book detail</h2>
@@ -8,10 +9,18 @@
 					<td></td>
 					<td><%= @book_date.title %></td>
 					<td><%= @book_date.body %></td>
-					<td><%= link_to "edit", edit_book_path(@book_date) %></td>
 					<td><% if @book_date.user == current_user %>
-						<%= link_to "Destroy", book_path(@book_date), method: :delete %>
-						<% end %></td>
+						<%= link_to edit_book_path(@book_date) do %>
+							<span class="btn-sm btn-success">edit</span>
+						</td>
+						<% end %>
+						<% end %>
+					<td><% if @book_date.user == current_user %>
+						<%= link_to book_path(@book_date), method: :delete do %>
+						<span class="btn-sm btn-danger">Destroy</span>
+						<% end %>
+						<% end %>
+				    </td>
 				</tr>
 			</tbody>
 		</table>
