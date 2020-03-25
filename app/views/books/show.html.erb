@@ -6,7 +6,7 @@
 		<table class="table">
 			<tbody>
 				<tr>
-					<td></td>
+					<td><%= attachment_image_tag @book.user, :profile_image, :fill, 30, 30, class: "pull-left profile-thumb", fallback: "no_image.jpg", size:6*6%></td>
 					<td><%= @book_date.title %></td>
 					<td><%= @book_date.body %></td>
 					<td><% if @book_date.user == current_user %>
