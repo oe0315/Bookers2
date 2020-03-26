@@ -22,7 +22,7 @@
 			</div>
 			<% end %>
 			<div class="col-lg-offset-3 col-lg-9">
-				<a class="book_path" href="/books/1">Show</a><%= "|" %><a href="/books">Back</a>
+				<%= link_to book_path(@book) do %>Show<% end %><%= "|" %><a href="/books">Back</a>
 			</div>
 		</div>
 	</div>
